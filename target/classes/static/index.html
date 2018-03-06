@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app1">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body ng-controller="indexController">
+
+
+<div class="bigContent">
+    <div class="headDiv"><span>牛逼App</span><span>欢迎您，<span class="userName" ng-mouseleave="showyincao.closeDiv()" ng-click="showyincao.showDiv()">{{user.name}}</span></span></div>
+    <div class="hideDiv" ng-mouseover="showyincao.showDivOk()" ng-mouseleave="showyincao.closeDiv()">
+        <span>修改密码</span>
+        <span ng-click="loginout()">退出</span>
+    </div>
+    <!--内容部分-->
+
+    <div class="mainContent">
+        <div>
+            <span>密令：</span><input type="text">
+            <button ng-click="action.allTranslate($event,true,'appDiv')">正译</button><button ng-click="action.allTranslate($event,false,'appDiv')">反译</button><button ng-click="action.returnApps($event)">还原</button>
+            <input type="text" ng-blur="action.nameRetrun($event,false)" ng-focus="action.nameRetrun($event,true)" placeholder="app名称转译">
+        </div>
+        <div>
+            <span>我的app列表</span> <button data-toggle="modal" data-target=".bs-example-modal-lg">添加app</button>
+        </div>
+
+        <div id="appDiv">
+            <div ng-repeat="app in apps">
+                <span>{{app.name}}</span>
+                <span>{{app.pw}}</span>
+                <input type="text">
+                <button ng-click="action.singleTranslate($event,true)">正译</button><button ng-click="action.singleTranslate($event,false)">反译</button>
+                <button ng-click="action.deleteApp($event,this.app)">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Large modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>-->
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <header>Memory Store</header>
+            <div>
+                <div class="modalTranslate">
+                    <span>密令：</span><input type="text">
+                    <button ng-click="action.allTranslate($event,true,'mode_apps')">正译</button><button ng-click="action.allTranslate($event,false,'mode_apps')">反译</button>
+                    <input type="text" ng-blur="action.modelRetrun($event,true)" ng-focus="action.modelRetrun($event,false)" placeholder="app名称转译">
+                </div>
+                <div class="headDiv">
+                    <div class="name">
+                        <span>名称：</span><input type="text">
+                        <button ng-click="modalLg.addApp()">添加</button>
+                    </div>
+                    <div class="name">
+                        <span>密码：</span><input type="password">
+                        <input type="password">
+                    </div>
+                </div>
+                <div class="apps_list" id="mode_apps">
+                    <div ng-repeat="app in modalLg.apps">
+                        <span>{{app.name}}</span>
+                        <span>{{app.pw}}</span>
+                        <input type="text">
+                        <button ng-click="action.singleTranslate($event,true)">正译</button><button ng-click="action.singleTranslate($event,false)">反译</button>
+                        <button ng-click="modalLg.deleteModalApp($index)">删除</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" ng-click="modalLg.save()">保存列表</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Small modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>-->
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            ...
+        </div>
+    </div>
+</div>
+
+<script src="./common/jquery-3.2.1.min.js"></script>
+<script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="./js/angular.min.js"></script>
+<script src="./js/indexController.js"></script>
+</body>
+</html>

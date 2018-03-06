@@ -1,0 +1,121 @@
+.UG_box{
+    width: 27%;
+    margin: 50px auto 20px auto;
+    background: #f2f2f5;
+    padding: 20px;
+}
+.W_unlogin_v4{
+    position: relative;
+    width: 300px;
+}
+.W_unlogin_v4 .login_box{
+    min-height: 280px;
+    background-color: #fff;
+    padding: 0 15px 6px 15px;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.15);
+}
+.W_unlogin_v4 .info_header {
+    position: relative;
+}
+.W_unlogin_v4 .W_login_form {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.W_unlogin_v4 .info_list {
+    margin-top: 12px;
+}
+.W_unlogin_v4 .W_login_form .username .input_wrap {
+    background-position: 11px -91px;
+}
+.W_unlogin_v4 .W_login_form .username .input_wrap {
+    background-position: 11px -91px;
+}
+
+.W_unlogin_v4 .W_login_form .input_wrap {
+    height: 28px;
+    padding: 2px 0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #FFF;
+}
+
+.W_unlogin_v4 .W_login_form .input_wrap .W_input {
+    margin-left: 34px;
+    width: 86%;
+    border: none;
+    box-shadow: none;
+}
+.W_input, .send_weibo .input {
+    background-color: #fff;
+}
+.S_line3, .W_input, .send_weibo .input, .W_btn_b:hover {
+    border-color: #cccccc;
+}
+.S_bg2, blockquote, .W_btn_b, .W_input, .SW_fun_bg {
+    background-color: #fff;
+}
+.S_txt2, .W_input, .W_btn_b_disable, .W_btn_b_disable:hover {
+    color: #808080;
+    text-decoration: none;
+}
+.W_input {
+    vertical-align: middle;
+    color: #808080;
+    background-color: transparent;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15) inset;
+}
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+.W_unlogin_v4 .cp_logo,
+.W_unlogin_v4 .W_login_form .username .input_wrap,
+.W_unlogin_v4 .W_login_form .password .input_wrap,
+.W_unlogin_v4 .W_login_form .phone .input_wrap,
+.W_unlogin_v4 .info_header .qrcode_phone,
+.W_unlogin_v4 .info_header
+.qrcode_target, .W_unlogin_v4 .info_header .qrcode_target_hide {
+    background: url(../image/sprite_login.png) no-repeat;
+}
+.W_unlogin_v4 .info_list {
+    margin-top: 12px;
+}
+.W_unlogin_v4 .W_login_form .login_btn .W_btn_a {
+    padding: 0;
+    display: block;
+    font-size: 16px;
+}
+
+.btn_32px {
+    display: inline-block;
+    height: 32px;
+    line-height: 33px;
+    font-size: 14px;
+}
+.W_btn_a {
+    background: #ff8140;
+    border: 1px solid #f77c3d;
+    color: #fff;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.25);
+}
+.W_btn_a, .W_btn_b, .W_btn_c, .W_btn_d {
+    padding: 0 10px 0 10px;
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 2px;
+    height: 24px;
+    line-height: 25px;
+    text-decoration: none;
+    font-size: 12px;
+    min-width: 40px;
+    text-align: center;
+    outline: none;
+}
+.info_list a:hover{
+    text-decoration: none;
+    background: #f7671d;
+    border: 1px solid #f06923;
+}

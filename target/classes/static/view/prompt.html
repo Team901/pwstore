@@ -1,0 +1,188 @@
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .anan{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: -webkit-fill-available;
+            background: rgb(0, 0, 0);
+            opacity: 0.3;
+            z-index: 10001;
+        }
+        .prompt_content{
+            position: absolute;
+            z-index: 10001;
+            top: 200px;
+            left: 400px;
+            visibility: visible;
+
+            width: 366px;
+            /*margin: 154px auto;*/
+            /*position: relative;*/
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+        .prompt_content .title {
+            background: #f2f2f2;
+            height: 30px;
+            line-height: 30px;
+            font-weight: 700;
+            padding: 0 0 0 20px;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+        Style Attribute {
+            cursor: move;
+        }
+        .prompt_content .W_close {
+            position: absolute;
+            z-index: 2;
+            right: 17px;
+            top: 6px;
+        }
+        .W_close {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url(../image/x.png?id=20141016154300) no-repeat -75px -200px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .W_close:hover {
+            background-position: -100px -200px;
+        }
+        .layer_point {
+            width: 320px;
+            padding: 15px 20px;
+        }
+        .icon_questionM {
+            background-position: -50px -150px;
+            width: 32px;
+            height: 32px;
+            width: 16px;
+            height: 16px;
+            /*background: url(../image/ico_warn.png?id=1375862658279);*/
+            /*_background: url(../image/ico_warn.gif?id=1370232467958);*/
+            margin: 0 3px 0 0;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .layer_point .point dd {
+            word-wrap: break-word;
+            width: 285px;
+            line-height: 18px;
+            padding-top: 8px;
+        }
+        .layer_point .point dd .S_txt1 {
+            font-size: 14px;
+            padding: 0 0 5px;
+        }
+        .prompt_content .btn {
+            text-align: right;
+            padding: 15px 0 0;
+        }
+        .prompt_content .btn a {
+            margin: 0 0 0 10px;
+        }
+        .W_btn_d{
+            border-width: 1px;
+            border-style: solid;
+            border-color: #ff9b01;
+            background-color: #ffa00a;
+            color: #fff;
+            border-radius: 2px;
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        .prompt_content .btn a {
+            margin: 0 0 0 10px;
+        }
+        .layer_point .point dt{
+            float: left;
+
+        }
+        .prompt_content .W_btn_b{
+            border-color: #d9d9d9;
+            background-color: #f2f2f2;
+        }
+        .W_btn_b {
+            display: inline-block;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 2px;
+            overflow: hidden;
+            vertical-align: middle;
+            cursor: pointer;
+            border-color: #d9d9d9;
+            background-color: #f2f2f2;
+        }
+        .W_btn_d,
+        .W_btn_b{
+            border-color: #ffffff;
+            color: #333333;
+        }
+        .W_btn_b:hover,
+        .W_btn_d:hover{
+            border-color: #ff9b01;
+            background-color: #ffa00a;
+        }
+        .W_btn_b:hover span{
+            color: #fff;
+        }
+        .W_btn_b span{
+            color:#333;
+        }
+        .W_btn_d span{
+            color:#fff;
+        }
+        .W_btn_b span,
+        .W_btn_d span{
+            padding: 0 9px 0 10px;
+            white-space: nowrap;
+            display: inline-block;
+            border-width: 1px;
+            border-radius: 2px;
+            height: 18px;
+            line-height: 18px;
+        }
+    </style>
+</head>
+<div class="anan">
+
+</div>
+<div class="prompt_content" node-type="layoutContent">
+    <div class="title" node-type="title" style="cursor: move;">
+        <span node-type="title_content">提示</span>
+    </div>
+    <a href="javascript:void(0);" class="W_close" title="关闭" node-type="close"></a>
+    <div node-type="inner">
+        <div node-type="outer" class="layer_point">
+            <dl class="point clearfix">
+                <dt>
+                    <span class="icon_questionM" node-type="icon">
+
+                    </span>
+                </dt>
+                <dd node-type="inner">
+                    <p class="S_txt1" node-type="textLarge">确认切换到中文(台湾)版吗</p>
+                    <p class="S_txt2" node-type="textComplex"></p>
+                    <p class="S_txt2" node-type="textSmall"></p>
+                </dd>
+            </dl>
+            <div class="btn">
+                <a href="javascript:void(0)" class="W_btn_d" node-type="OK">
+                    <span>确定</span>
+                </a>
+                <a href="javascript:void(0)" class="W_btn_b" node-type="cancel">
+                    <span>取消</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

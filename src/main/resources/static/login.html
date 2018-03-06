@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body ng-controller="loginController">
+<div class="UG_box" fixed-id="2" ng-keyup="loginOnkey($event)">
+    <div class="W_unlogin_v4">
+        <div class="login_box" id="pl_login_form">
+            <div class="login_innerwrap">
+                <div class="info_header">
+                    <div class="tab clearfix">
+                        <a href="javascript:void(0);" node-type="normal_tab" action-type="switchTab" action-data="type=normal" suda-uatrack="key=tblog_weibologin3&amp;value=ordinary_login" class="W_fb cur"><!-- <span class="W_icon_rec"><span class="W_icon_rec_txt">推荐</span><span class="W_arrow_bor W_arrow_bor_r"><i class="S_spetxt"></i></span></span>-->帐号登录</a>
+                        <!--<a href="javascript:void(0);" node-type="qrcode_tab" action-type="switchTab" action-data="type=qrcode" suda-uatrack="key=tblog_weibologin3&amp;value=qrcode_login" class=" ">安全登录</a>-->
+                    </div>
+                    <!-- qrcode_target  qrcode_phone 点击时相互切换 -->
+                    <!--<a href="javascript:void(0);" node-type="message_tab" action-type="switchTab" action-data="type=message" class="qrcode_target qrcode_phone"></a>-->
+                </div>
+                <!-- 登录框content -->
+
+
+
+                <!-- /result end -->
+
+
+
+                <div class="W_login_form" node-type="normal_form" style="">
+                    <!--<div class="info_list pre_info clearfix" node-type="prename_box" style="display:none"></div>-->
+                    <div class="info_list username" node-type="username_box">
+                        <div class="input_wrap">
+                            <input id="loginname" type="text" class="W_input" maxlength="128" autocomplete="off" placeholder="邮箱/会员帐号/手机号" action-data="text=邮箱/会员帐号/手机号" action-type="text_copy" ng-model="user.username" name="username" node-type="username" tabindex="1">
+                        </div>
+                    </div>
+                    <div class="info_list password" node-type="password_box">
+                        <div class="input_wrap">
+                            <input id="password" type="password" placeholder="请输入密码" class="W_input" maxlength="24" autocomplete="off" value="" action-type="text_copy" name="password" ng-model="user.password" node-type="password" tabindex="2">
+                        </div>
+                    </div>
+                    <!-- 输入验证码 -->
+                    <div class="info_list verify clearfix" style="display: none;" node-type="verifycode_box">
+                        <div class="input_wrap W_fl">
+                            <input type="text" class="W_input" maxlength="6" autocomplete="off" value="验证码" action-data="text=请输入验证码" action-type="text_copy" name="verifycode" node-type="verifycode" tabindex="3" disabled="">
+                        </div>
+                        <a class="code W_fl" onclick="return false;" href="javascript:void(0);"><img width="95" height="34" action-type="btn_change_verifycode" node-type="verifycode_image" src="about:blank"></a>
+
+                    </div>
+                    <!-- /输入验证码 -->
+
+
+                    <div class="info_list auto_login clearfix">
+                        <div class="right W_fr"><a href="javascript:void(0);" onclick="var loginname=document.getElementById('loginname').value;window.open('https://security.weibo.com/iforgot/loginname?entry=weibo&amp;loginname='+loginname);" node-type="btn_password_recover" suda-data="key=tblog_weibologin3&amp;value=click_forgetpwd" class="S_txt2">忘记密码</a><span class="errorNameOrPassword" style="color: red;display: none">账号或密码错误</span></div>
+                        <label for="login_form_savestate" class="W_fl W_label" title="建议在网吧或公共电脑上取消该选项。" action-data="content=建议在网吧或公共电脑上取消该选项。" action-type="customTip"><input type="checkbox" id="login_form_savestate" checked="checked" node-type="savestate" tabindex="5" class="W_checkbox"><span class="S_txt2">记住我</span></label>
+                    </div>
+                    <div class="info_list login_btn">
+                        <a ng-click="login()" href="javascript:void(0)" class="W_btn_a btn_32px" action-type="btn_submit" node-type="submitBtn" suda-data="key=tblog_weibologin3&amp;value=click_sign" tabindex="6"><span node-type="submitStates">登录</span></a>
+                    </div>
+                    <div class="info_list register">
+                        <span class="S_txt2">还没有微博？</span><a target="_blank" href="/register.html">立即注册!</a>
+                    </div>
+
+                </div>
+
+                <!-- 短信登陆 -->
+                <!--<div class="W_login_form" node-type="message_form" style="display: none;">
+                    <div class="info_list phone">
+                        <div class="input_wrap W_input_focus" node-type="mobile_box">
+                            <input type="text" class="W_input" maxlength="128" autocomplete="off" placeholder="手机号码，仅支持大陆手机" value="" name="username" action-type="text_copy" node-type="mobile" no_cls="true">
+                        </div>
+                    </div>
+                    <div class="info_list msgInfo clearfix">
+                        <div class="input_wrap W_fr" node-type="activation_box">
+                            <input type="text" class="W_input" action-type="text_copy" action-data="text=短信验证码" maxlength="6" value="短信验证码" name="password" node-type="activation">
+                        </div>
+                        <a action-data="type=sendsms" node-type="btn_sms_activation" action-type="btn_sms_activation" href="javascript:void(0);" class="W_btn_b btn_32px W_fl">获取短信验证码</a>
+                        <a node-type="btn_sms_activation_disable" style="display:none" href="javascript:void(0);" class="W_btn_b btn_32px W_fl W_btn_b_disable"><em node-type="sms_timer">60</em>秒后再获取短信</a>
+                    </div>
+                    <div class="info_list auto_login clearfix">
+                        <div class="right W_fr"><a href="https://login.sina.com.cn/getpass.html?entry=weibo" node-type="btn_password_recover" target="_blank" suda-data="key=tblog_weibologin3&amp;value=click_forgetpwd" class="S_txt2">忘记密码</a></div>
+                        <label for="login_form_savestate1" class="login_form_savestate" title="建议在网吧或公共电脑上取消该选项。" action-data="content=建议在网吧或公共电脑上取消该选项。" action-type="customTip"><input type="checkbox" id="login_form_savestate1" checked="checked" node-type="savestate" tabindex="5" class="W_checkbox"><span class="S_txt2">记住我</span></label>
+                    </div>
+                    <div class="info_list login_btn">
+                        <a class="W_btn_a btn_32px" suda-data="key=tblog_weibologin3&amp;value=click_sign" node-type="submitBtn" action-type="btn_submit" href="javascript:void(0)"><span node-type="submitStates">登录</span></a>
+                    </div>
+                    <div class="info_list register">
+                        <span class="S_txt2">还没有微博？</span><a target="_blank" href="//weibo.com/signup/signup.php ">立即注册!</a>
+                    </div>
+
+                </div>-->
+
+                <div class="info_list other_login clearfix" node-type="other" style="">
+                    <span class="tit W_fl S_txt2">其它登录：</span>
+                    <div class="other_login_list W_fl">
+                        <iframe scrolling="no" frameborder="no" src="https://login.taobao.com/member/login.jhtml?from=wbfast&amp;style=wbfast&amp;goto=http%3A%2F%2Fweibo.com%2Fa%2Fbind%2Flogin%3Fentry%3Dtaobao%26sid%3Dbb8fb56fcd2c29dd418e7f66cc77c65a" allowtransparency="true" style="width: 16px; height: 16px; overflow: hidden;float: left;margin-right: 3px;margin-top: -1px;"></iframe>						<a target="_blank" href="https://passport.weibo.com/othersitebind/authorize?entry=miniblog&amp;site=qq" class="cp_logo icon_qq" suda-uatrack="key=tblog_weibologin3&amp;value=other_qq"></a>
+                        <!--<a target="_blank" href="https://open.mmarket.com:443/omee-aus/services/oauth/authorize?clientId=300009888263&amp;redirectUri=https://account.weibo.com/set/bindsns/callback&amp;clientState=123&amp;responseType=code" suda-data="key=tblog_weibologin3&amp;value=other_yidong" class="cp_logo icon_yidong"></a>-->
+                        <!--<a target="_blank" href="http://sersh.passport.189.cn/OAuth/authorize.aspx?client_id=3535450001600701&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Faccount.weibo.com%2Fset%2Fbindsns%2Fcallback&amp;state=telecom" suda-data="key=tblog_weibologin3&amp;value=other_tianyi" class="cp_logo icon_tianyi"></a>-->
+                        <!--<a target="_blank" href="https://openapi.360.cn/oauth2/authorize?client_id=8819d1babbbc50a42021ee957c4b6e63&amp;response_type=code&amp;redirect_uri=https://account.weibo.com/set/bindsns/callback&amp;scope=basic&amp;display=default&amp;state=360&amp;relogin=sina" suda-data="key=tblog_weibologin3&amp;value=other_360" class="cp_logo icon_360"></a>-->
+                        <!--<a target="_blank" href="https://account.weibo.com/set/bindsns/unicomoauth" suda-data="key=tblog_weibologin3&amp;value=other_liantong" class="cp_logo icon_unicom"></a>-->
+                        <!--<a target="_blank" href="https://passport.weibo.com/othersitebind/authorize?entry=miniblog&amp;site=baidu" suda-uatrack="key=tblog_weibologin3&amp;value=other_baidu" class="cp_logo icon_baidu"></a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="common/jquery-3.2.1.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/login.controller.js"></script>
+</body>
+</html>
